@@ -73,11 +73,18 @@
   .wrap{max-width:760px; margin:0 auto; padding:0 20px 80px;}
 
   .hero{padding:50px 0 8px; text-align:center;}
-  .hero .kick{display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; letter-spacing:.22em; color:var(--vermilion); margin-bottom:20px;}
-  .hero .kick::before, .hero .kick::after{content:""; width:22px; height:1px; background:var(--vermilion); opacity:.5;}
-  .hero h1{font-family:var(--serif); font-weight:800; font-size:33px; line-height:1.62; letter-spacing:.06em; margin:0 0 16px;}
-  .hero h1 .em{color:var(--accent); position:relative;}
-  .hero p{color:var(--muted); font-size:15px; line-height:1.95; margin:0 auto 8px; max-width:580px;}
+  .hero .kick{display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:800; letter-spacing:.26em; color:var(--vermilion); margin-bottom:22px;}
+  .hero .kick::before, .hero .kick::after{content:""; width:26px; height:1.5px; background:var(--vermilion); opacity:.55;}
+  /* 見出し＝明朝で大きく強く（メリハリの“強”） */
+  .hero h1{font-family:var(--serif); font-weight:800; font-size:41px; line-height:1.42; letter-spacing:.01em; margin:0 0 18px;}
+  .hero h1 .em{color:var(--accent); position:relative; white-space:nowrap;}
+  .hero h1 .em::after{content:""; position:absolute; left:0; right:0; bottom:.06em; height:.34em; background:var(--accent); opacity:.13; border-radius:2px; z-index:-1;}
+  /* 本文＝細めゴシックで静かに（メリハリの“弱”） */
+  .hero p{color:var(--muted); font-size:15px; font-weight:500; line-height:1.95; margin:0 auto 8px; max-width:560px;}
+  /* キャッチの“強”：太ゴシックで一気に主張 */
+  .hero .punch{color:var(--ink); font-size:20px; font-weight:800; line-height:1.7; letter-spacing:.02em; margin-top:18px;}
+  .hero .punch b{font-family:var(--sans); font-weight:900; font-size:1.18em; color:var(--accent);}
+  .hero .punch .sub{display:block; font-size:14px; font-weight:500; color:var(--muted); margin-top:4px;}
 
   .trust{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 10px; margin:22px auto 0; max-width:600px;}
   .trust .chip{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:var(--accent-deep); background:#fff; border:1px solid var(--line); border-radius:999px; padding:7px 14px;}
@@ -96,10 +103,10 @@
   .pstep{font-size:12px; font-weight:700; color:var(--soft); letter-spacing:.08em; white-space:nowrap;}
 
   .intro-badge{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--accent-deep); background:var(--red-soft); padding:7px 16px; border-radius:999px; margin-bottom:16px;}
-  .diag h2{font-family:var(--serif); font-weight:800; font-size:25px; line-height:1.55; letter-spacing:.04em; margin:0 0 10px;}
+  .diag h2{font-family:var(--serif); font-weight:800; font-size:28px; line-height:1.5; letter-spacing:.02em; margin:0 0 12px;}
   .diag .desc{color:var(--muted); font-size:14.5px; line-height:1.95; margin:0 0 24px;}
-  .q{font-size:19px; font-weight:700; margin:0 0 18px; line-height:1.65; letter-spacing:.03em;}
-  .q .qn{color:var(--amber); font-weight:800; margin-right:8px;}
+  .q{font-size:20.5px; font-weight:800; margin:0 0 20px; line-height:1.6; letter-spacing:.02em;}
+  .q .qn{font-family:var(--serif); color:var(--accent); font-weight:800; font-size:1.18em; margin-right:9px;}
   .q .sub{display:block; font-size:13px; color:var(--soft); font-weight:500; margin-top:6px; line-height:1.6;}
 
   .opts{display:flex; flex-direction:column; gap:11px;}
@@ -125,10 +132,10 @@
   .rbadge.route2{background:var(--blue-soft); color:var(--indigo-deep);}
   .rbadge.route3{background:var(--amber-soft); color:#7A4E0B;}
   .rbadge.route4{background:var(--red-soft); color:#7E2516;}
-  .rtitle{font-family:var(--serif); font-weight:800; font-size:23px; line-height:1.6; letter-spacing:.03em; margin:0 0 6px;}
+  .rtitle{font-family:var(--serif); font-weight:800; font-size:26px; line-height:1.55; letter-spacing:.01em; margin:0 0 8px;}
   .rtitle .em{color:var(--accent);}
-  .rlead{font-size:13px; color:var(--soft); font-weight:700; letter-spacing:.04em; margin:0 0 14px;}
-  .rmsg{font-size:15px; color:var(--ink); margin:0 0 18px; line-height:1.85;}
+  .rlead{font-size:11.5px; color:var(--accent); font-weight:800; letter-spacing:.18em; margin:0 0 12px;}
+  .rmsg{font-size:15px; color:var(--ink); font-weight:500; margin:0 0 18px; line-height:1.92;}
   .rmsg b{color:var(--accent-deep);}
 
   .route{display:flex; gap:14px; background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:0 0 18px;}
@@ -192,24 +199,25 @@
     .hero{padding:34px 0 4px;}
     .hero .kick{font-size:11px; letter-spacing:.16em; margin-bottom:14px;}
     .hero .kick::before, .hero .kick::after{width:16px;}
-    .hero h1{font-size:25px; line-height:1.55; letter-spacing:.02em; margin:0 0 13px;}
+    .hero h1{font-size:28px; line-height:1.5; letter-spacing:.01em; margin:0 0 14px;}
     .hero p{font-size:14px; line-height:1.85;}
     .hero p br{display:none;}            /* 狭い画面では自然な折り返しに任せる */
+    .hero .punch{font-size:17.5px; margin-top:15px;}
     .trust{gap:7px; margin-top:18px;}
     .trust .chip{font-size:11.5px; padding:6px 11px;}
 
     .diag{padding:24px 17px 26px; border-radius:15px; margin-top:22px;}
-    .diag h2{font-size:21px; line-height:1.5;}
+    .diag h2{font-size:23px; line-height:1.48;}
     .diag .desc{font-size:13.5px;}
     .intro-badge{font-size:12px; padding:6px 13px;}
 
-    .q{font-size:17px; line-height:1.6; margin-bottom:15px;}
+    .q{font-size:18px; line-height:1.6; margin-bottom:16px;}
     .opt{padding:13px 14px; font-size:14.5px; gap:10px;}
     .opt .ico{font-size:18px;}
     .opt .lbl small{font-size:12px;}
     .btn{font-size:15.5px; padding:15px 20px;}
 
-    .rtitle{font-size:20px; line-height:1.55;}
+    .rtitle{font-size:22px; line-height:1.5;}
     .rmsg{font-size:14px;}
     .route{padding:14px; gap:11px;}
     .route .rk{width:42px; height:42px; font-size:21px;}
@@ -230,7 +238,8 @@
     .disc{font-size:11px;}
   }
   @media (max-width:380px){
-    .hero h1{font-size:23px;}
+    .hero h1{font-size:25px;}
+    .hero .punch{font-size:16.5px;}
     .diag{padding:20px 14px 22px;}
     .trust{flex-direction:column; align-items:stretch;}
     .trust .chip{justify-content:center;}
@@ -252,7 +261,7 @@
     <span class="kick">外国人採用 適性診断</span>
     <h1>外国人の採用、<br><span class="em">何から始めればいい？</span></h1>
     <p>「人手が足りない。外国人採用も気になる。<br>でも、特定技能・技人国・ビザの違いがよくわからない」——そんな御社へ。</p>
-    <p><b>30秒・3つの質問に答えるだけ！</b><br>御社に合った採用ルートと、いま紹介できる人材イメージがわかります。</p>
+    <p class="punch"><b>30秒・3つの質問</b>に答えるだけ！<span class="sub">御社に合った採用ルートと、いま紹介できる人材イメージがわかります。</span></p>
     <div class="trust">
       <span class="chip">✓ 完全<b>無料</b>・登録不要</span>
       <span class="chip">✓ 入力は<b>30秒</b></span>
