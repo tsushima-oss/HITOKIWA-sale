@@ -191,30 +191,44 @@
   .footer{text-align:center; color:var(--soft); font-size:12px; padding:30px 0 0;}
   .footer .hk-logo{height:26px; width:auto; color:var(--ink); margin:0 auto 10px;}
 
-  /* ====== キャラクター（喜怒哀楽の案内役＋にぎやか） ====== */
-  .m-img{display:block; width:100%; height:auto; filter:drop-shadow(0 6px 10px rgba(40,60,30,.16)); -webkit-user-drag:none; user-select:none;}
-  /* 吹き出し付き 案内役（インライン行） */
-  .guide{display:flex; align-items:center; gap:13px; margin:18px 0 6px;}
+  /* ====== キャラクター（喜怒哀楽の案内役＋にぎやか）======
+     方針：サイズは“高さ”で統一しポーズ差による大小バラつきを排除。
+     吹き出しはゲーム誌のコール風＝太字・緑ボーダー・三角テール。
+     悩み系は無彩色、前向き系は緑、でトーンを描き分ける。 */
+  .m-img{display:block; height:auto; filter:drop-shadow(0 7px 11px rgba(30,50,25,.20)); -webkit-user-drag:none; user-select:none;}
+
+  /* --- 吹き出し共通 --- */
+  .bub,.pb{background:#fff; border:2px solid var(--accent); color:var(--accent-deep); font-weight:800; box-shadow:0 5px 14px rgba(30,60,30,.15);}
+  .bub.worry,.pb.worry{border-color:#cdcabc; color:var(--muted);}
+
+  /* --- 案内役（インライン：キャラ＋吹き出し）--- */
+  .guide{display:flex; align-items:center; gap:15px; margin:20px 0 6px;}
   .guide.center{justify-content:center;}
-  .guide .gch{flex:0 0 auto; width:78px;}
-  .guide .bub{position:relative; background:#fff; border:1.5px solid var(--line); border-radius:16px; padding:10px 15px; font-size:13.5px; font-weight:700; color:var(--ink); line-height:1.55; box-shadow:0 5px 14px rgba(40,60,30,.10);}
-  .guide .bub b{color:var(--accent-deep);}
-  .guide .bub::before{content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); border:8px solid transparent; border-right-color:var(--line);}
-  .guide .bub::after{content:""; position:absolute; left:-7px; top:50%; transform:translateY(-50%); border:7px solid transparent; border-right-color:#fff;}
-  /* ヒーロー左右の覗きキャラ（広い画面のみ／テキストに重ねない） */
+  .guide .gch img{height:94px; width:auto;}
+  .guide .bub{position:relative; border-radius:18px; padding:12px 17px; font-size:14.5px; line-height:1.5;}
+  .guide .bub b{color:var(--accent); font-size:1.05em;}
+  .guide .bub::before{content:""; position:absolute; left:-13px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-right-color:var(--accent);}
+  .guide .bub::after{content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); border:8px solid transparent; border-right-color:#fff;}
+
+  /* --- ヒーロー左右の覗きキャラ（広い画面のみ）--- */
   .hero{position:relative;}
-  .hero-peek{position:absolute; bottom:6px; width:94px; z-index:2;}
-  .hero-peek.left{left:-52px;} .hero-peek.right{right:-52px;}
-  .hero-peek .pb{position:absolute; top:-28px; left:50%; transform:translateX(-50%); white-space:nowrap; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:5px 11px; font-size:11.5px; font-weight:700; color:var(--ink); box-shadow:0 4px 10px rgba(40,60,30,.10);}
-  @media (max-width:900px){ .hero-peek{display:none;} }
-  /* 結果・サンキューの祝福キャラ */
-  .celebrate{display:flex; align-items:flex-end; justify-content:center; gap:8px; margin:4px 0 16px;}
-  .celebrate img{width:72px; height:auto; filter:drop-shadow(0 5px 9px rgba(40,60,30,.15));}
-  /* 人材見出し横のキャラ */
-  .sectit .sch{width:38px; height:auto; margin-left:auto; filter:drop-shadow(0 3px 6px rgba(40,60,30,.14));}
-  /* フッターのにぎやかキャラ */
-  .foot-chars{display:flex; align-items:flex-end; justify-content:center; gap:4px; margin:4px 0 14px;}
-  .foot-chars img{width:60px; height:auto; filter:drop-shadow(0 4px 8px rgba(40,60,30,.14));}
+  .hero-peek{position:absolute; bottom:0; z-index:2;}
+  .hero-peek img{height:132px; width:auto;}           /* 高さ固定で左右の大きさを揃える */
+  .hero-peek.left{left:-72px;} .hero-peek.right{right:-72px;}
+  .hero-peek .pb{position:absolute; top:-26px; left:50%; transform:translateX(-50%); white-space:nowrap; border-radius:14px; padding:6px 13px; font-size:12.5px;}
+  .hero-peek .pb::before{content:""; position:absolute; left:50%; bottom:-11px; transform:translateX(-50%); border:9px solid transparent; border-top-color:var(--accent);}
+  .hero-peek .pb::after{content:""; position:absolute; left:50%; bottom:-8px; transform:translateX(-50%); border:7px solid transparent; border-top-color:#fff;}
+  .hero-peek .pb.worry::before{border-top-color:#cdcabc;}
+  @media (max-width:1023px){ .hero-peek{display:none;} }   /* 余白が足りない画面では非表示 */
+
+  /* --- 結果・サンキューの祝福キャラ --- */
+  .celebrate{display:flex; align-items:flex-end; justify-content:center; gap:12px; margin:2px 0 16px;}
+  .celebrate img{height:96px; width:auto;}
+  /* --- 人材見出し横 --- */
+  .sectit .sch{height:46px; width:auto; margin-left:auto;}
+  /* --- フッターのにぎやか3体 --- */
+  .foot-chars{display:flex; align-items:flex-end; justify-content:center; gap:10px; margin:6px 0 14px;}
+  .foot-chars img{height:78px; width:auto; filter:drop-shadow(0 5px 9px rgba(30,50,25,.16));}
 
   /* ============ スマホ最適化 ============ */
   @media (max-width:600px){
@@ -262,13 +276,13 @@
     .thanks h2{font-size:22px;}
     .thanks p{font-size:13.5px;}
     .disc{font-size:11px;}
-    /* キャラクター（スマホ） */
-    .guide{gap:10px; margin:16px 0 4px;}
-    .guide .gch{width:62px;}
-    .guide .bub{font-size:12.5px; padding:9px 12px;}
-    .celebrate img{width:62px;}
-    .foot-chars img{width:52px;}
-    .sectit .sch{width:32px;}
+    /* キャラクター（スマホ）＝高さで統一 */
+    .guide{gap:12px; margin:16px 0 4px;}
+    .guide .gch img{height:74px;}
+    .guide .bub{font-size:13px; padding:10px 13px;}
+    .celebrate img{height:76px;}
+    .foot-chars img{height:60px;}
+    .sectit .sch{height:36px;}
   }
   @media (max-width:380px){
     .hero h1{font-size:25px;}
@@ -301,7 +315,7 @@
       <span class="chip">✓ しつこい営業はしません</span>
     </div>
     <!-- ヒーロー左右の覗きキャラ（広い画面のみ）：哀＝悩み共感／頼れる＝おまかせ -->
-    <div class="hero-peek left"><span class="pb">違いがわからない…</span><img class="m-img" src="assets/chars/inshoku_sad.png?v=4" alt=""></div>
+    <div class="hero-peek left"><span class="pb worry">違いがわからない…</span><img class="m-img" src="assets/chars/inshoku_sad.png?v=4" alt=""></div>
     <div class="hero-peek right"><span class="pb">制度はおまかせ！</span><img class="m-img" src="assets/chars/megane_fun.png?v=4" alt=""></div>
   </div>
 
