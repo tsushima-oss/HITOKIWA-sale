@@ -29,25 +29,26 @@
   /* ===== カラートーン：和モダン（日本の伝統色＝和色）×ヒトキワ・ブランド =====
      生成り（washi）の地に、苔色（こけいろ）＝ヒトキワ・グリーンを主役に。
      藍色（あいいろ）を準主役、弁柄（べんがら＝朱）を差し色、金茶（きんちゃ）を注意喚起に。 */
+  /* ===== カラートーン：広告バナー準拠（ヒトキワ・グリーン＋イエローのアクセント） ===== */
   :root{
-    --ink:#2b2a26;        /* 墨色（すみいろ） */
-    --muted:#6c6a60;      /* 利休鼠（りきゅうねず） */
-    --soft:#9c9a8d;       /* 鈍色（にびいろ） */
-    --accent:#b4472b;     /* 弁柄色（べんがらいろ）＝朱・赤 ＝主役に切替 */
-    --accent-deep:#8f3621;/* 深い弁柄 */
-    --indigo:#235a72;     /* 藍色／納戸色（なんどいろ） */
-    --indigo-deep:#1a4456;
-    --vermilion:#6c8954;  /* 苔色（こけいろ）＝ヒトキワ・グリーン ＝差し色に切替 */
-    --vermilion-soft:#e8eede;
-    --amber:#a9802a;      /* 金茶（きんちゃ） */
-    --amber-soft:#f3ead2; /* 鳥の子色（とりのこいろ） */
-    --teal:#3a7d6a;       /* 青竹色（あおたけいろ） */
-    --teal-soft:#e3ede6;
-    --red:#a8331f; --red-soft:#f6e3dc;  /* 危険・エラー用（主役より深い赤で区別） */
-    --paper:#f6f1e6;      /* 生成り（きなり）＝和紙の地 */
-    --card:#fffdf7;       /* 胡粉色（ごふんいろ）の白 */
-    --line:#e5dcc7; --line2:#efe7d6;
-    --blue-soft:#e6eef1;  /* うすい藍 */
+    --ink:#1d2a20;        /* ほぼ黒（わずかに緑みの墨） */
+    --muted:#5b6a5f;      /* グレイッシュグリーン */
+    --soft:#94a097;       /* 淡いグレーグリーン */
+    --accent:#2f9e44;     /* ヒトキワ・グリーン（バナーの緑＝主役） */
+    --accent-deep:#1c7a36;/* 深緑（大見出し・濃い緑） */
+    --indigo:#2a6e8c;     /* 補助の青（技人国ルート） */
+    --indigo-deep:#1f5469;
+    --vermilion:#1c7a36;  /* 差し色＝深緑（見出しキッカー等） */
+    --vermilion-soft:#e3f1e6;
+    --amber:#d99a12;      /* イエロー／ゴールド（バナーの黄＝アクセント） */
+    --amber-soft:#fdf3d2; /* 淡いイエロー（ハイライトのピル） */
+    --teal:#2f9e44;       /* 緑（おすすめ＝特定技能ルート） */
+    --teal-soft:#e4f3e7;
+    --red:#c0492f; --red-soft:#fbe9e2;  /* 危険・エラー／相談ルート用 */
+    --paper:#f4f8f2;      /* ほぼ白の淡いグリーン地（バナーの清潔感） */
+    --card:#ffffff;       /* 白カード */
+    --line:#e1e8e0; --line2:#eef3ec;
+    --blue-soft:#e7f0f4;  /* うすい青 */
     --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
     --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
   }
@@ -58,9 +59,9 @@
     letter-spacing:.04em; font-feature-settings:"palt" 1;  /* 和文の詰め＝読みやすく上品に */
     /* 生成りの地に、ごく淡い麻の葉文様（和テイスト） */
     background-color:var(--paper);
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='none' stroke='%23b4472b' stroke-width='0.6' stroke-opacity='0.05'%3E%3Cpath d='M30 0L60 17.3v34.7L30 69.3 0 52V17.3z'/%3E%3Cpath d='M30 0v34.7M0 17.3l30 17.3 30-17.3M0 52l30-17.3L60 52'/%3E%3C/g%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='none' stroke='%232f9e44' stroke-width='0.6' stroke-opacity='0.05'%3E%3Cpath d='M30 0L60 17.3v34.7L30 69.3 0 52V17.3z'/%3E%3Cpath d='M30 0v34.7M0 17.3l30 17.3 30-17.3M0 52l30-17.3L60 52'/%3E%3C/g%3E%3C/svg%3E");
   }
-  ::selection{background:rgba(180,71,43,.20);}
+  ::selection{background:rgba(47,158,68,.16);}
   h1,h2,h3,.rtitle,.diag h2{font-feature-settings:"palt" 1;}
 
   .bar{background:var(--ink); color:#fff; padding:13px 22px; display:flex; align-items:center; gap:12px;
@@ -73,8 +74,8 @@
   .wrap{max-width:760px; margin:0 auto; padding:0 20px 80px;}
 
   .hero{padding:50px 0 8px; text-align:center;}
-  .hero .kick{display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:800; letter-spacing:.26em; color:var(--vermilion); margin-bottom:22px;}
-  .hero .kick::before, .hero .kick::after{content:""; width:26px; height:1.5px; background:var(--vermilion); opacity:.55;}
+  /* バナーに合わせた緑のピル型バッジ */
+  .hero .kick{display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em; color:#fff; background:var(--accent-deep); padding:9px 22px; border-radius:999px; margin-bottom:22px; box-shadow:0 4px 14px rgba(28,122,54,.22);}
   /* 見出し＝明朝で大きく強く（メリハリの“強”） */
   .hero h1{font-family:var(--serif); font-weight:800; font-size:41px; line-height:1.42; letter-spacing:.01em; margin:0 0 18px;}
   .hero h1 .em{color:var(--accent); position:relative; white-space:nowrap;}
@@ -102,7 +103,7 @@
   .pfill{height:100%; width:0; background:var(--accent); border-radius:99px; transition:width .4s ease;}
   .pstep{font-size:12px; font-weight:700; color:var(--soft); letter-spacing:.08em; white-space:nowrap;}
 
-  .intro-badge{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--accent-deep); background:var(--red-soft); padding:7px 16px; border-radius:999px; margin-bottom:16px;}
+  .intro-badge{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--accent-deep); background:var(--vermilion-soft); padding:7px 16px; border-radius:999px; margin-bottom:16px;}
   .diag h2{font-family:var(--serif); font-weight:800; font-size:28px; line-height:1.5; letter-spacing:.02em; margin:0 0 12px;}
   .diag .desc{color:var(--muted); font-size:14.5px; line-height:1.95; margin:0 0 24px;}
   .q{font-size:20.5px; font-weight:800; margin:0 0 20px; line-height:1.6; letter-spacing:.02em;}
@@ -111,7 +112,7 @@
 
   .opts{display:flex; flex-direction:column; gap:11px;}
   .opt{display:flex; align-items:center; justify-content:space-between; gap:12px; text-align:left; width:100%; background:var(--paper); border:1.5px solid var(--line); border-radius:12px; padding:15px 18px; font-family:inherit; font-size:15px; font-weight:500; color:var(--ink); cursor:pointer; transition:all .15s ease; line-height:1.55;}
-  .opt:hover{border-color:var(--accent); background:#fff; transform:translateY(-1px); box-shadow:0 4px 14px rgba(143,54,33,.16);}
+  .opt:hover{border-color:var(--accent); background:#fff; transform:translateY(-1px); box-shadow:0 4px 14px rgba(28,122,54,.16);}
   .opt .ico{flex:0 0 auto; font-size:20px; line-height:1;}
   .opt .lbl{flex:1;}
   .opt .lbl small{display:block; font-size:12.5px; color:var(--soft); font-weight:500; margin-top:2px;}
@@ -119,7 +120,8 @@
   .opt:hover .chev{color:var(--accent);}
 
   .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:inherit; font-weight:700; font-size:16px; letter-spacing:.06em; border:none; border-radius:12px; padding:16px 28px; cursor:pointer; transition:all .15s ease;}
-  .btn-primary{background:var(--accent); color:#fff; box-shadow:0 6px 18px rgba(143,54,33,.32);}
+  .btn-primary{background:var(--accent); color:#fff; box-shadow:0 6px 18px rgba(28,122,54,.30);}
+  .btn .hl{color:#ffd54a; font-weight:900;}  /* バナーの黄色アクセント（無料） */
   .btn-primary:hover{background:var(--accent-deep); transform:translateY(-1px);}
   .btn-full{width:100%;}
   .btn-ghost{background:transparent; color:var(--muted); font-weight:500; font-size:14px; padding:8px 4px; border:none; cursor:pointer; font-family:inherit;}
@@ -152,7 +154,7 @@
   .talent{display:grid; grid-template-columns:1fr 1fr; gap:11px;}
   @media (max-width:560px){ .talent{grid-template-columns:1fr;} }
   .tcard{background:#fff; border:1px solid var(--line); border-radius:13px; padding:14px; display:flex; gap:12px; align-items:flex-start;}
-  .tcard .av{flex:0 0 auto; width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#7fa05f,#4a6b3a); color:#fff; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; font-family:var(--serif);}
+  .tcard .av{flex:0 0 auto; width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,#4caf50,#2f9e44); color:#fff; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; font-family:var(--serif);}
   .tcard .tn{font-weight:800; font-size:14.5px; margin:0 0 2px; line-height:1.4;}
   .tcard .tmeta{font-size:11.5px; color:var(--soft); margin:0 0 7px;}
   .tcard .ttag{display:inline-block; font-size:11px; font-weight:700; color:var(--accent-deep); background:var(--blue-soft); border-radius:6px; padding:2px 8px; margin:0 4px 4px 0;}
@@ -161,7 +163,7 @@
   .pool .num{font-family:var(--serif); font-size:24px; font-weight:800; color:var(--teal);}
 
   /* お問い合わせフォーム */
-  .form{background:#f8efe7; border:1px solid #ecdcce; border-radius:16px; padding:22px 22px 24px; margin-top:24px;}
+  .form{background:#eef6ea; border:1px solid #d6e6cf; border-radius:16px; padding:22px 22px 24px; margin-top:24px;}
   .form h3{font-family:var(--serif); font-weight:800; font-size:19px; margin:0 0 4px;}
   .form .fdesc{font-size:13px; color:var(--muted); margin:0 0 18px; line-height:1.7;}
   .field{margin-bottom:13px;}
@@ -197,8 +199,7 @@
     .bar .hk-logo{height:22px;}
 
     .hero{padding:34px 0 4px;}
-    .hero .kick{font-size:11px; letter-spacing:.16em; margin-bottom:14px;}
-    .hero .kick::before, .hero .kick::after{width:16px;}
+    .hero .kick{font-size:11.5px; letter-spacing:.04em; padding:8px 16px; margin-bottom:16px;}
     .hero h1{font-size:28px; line-height:1.5; letter-spacing:.01em; margin:0 0 14px;}
     .hero p{font-size:14px; line-height:1.85;}
     .hero p br{display:none;}            /* 狭い画面では自然な折り返しに任せる */
@@ -258,8 +259,8 @@
 
   <!-- ヒーロー：「無料紹介」フックではなく「全面相談・伴走」の打ち出し -->
   <div class="hero">
-    <span class="kick">外国人採用 適性診断</span>
-    <h1>外国人の採用、<br><span class="em">何から始めればいい？</span></h1>
+    <span class="kick">はじめての外国人採用も、まずは簡易チェック</span>
+    <h1>会社に合う採用のかたちを<br><span class="em">30秒で診断</span></h1>
     <p>「人手が足りない。外国人採用も気になる。<br>でも、特定技能・技人国・ビザの違いがよくわからない」——そんな御社へ。</p>
     <p class="punch"><b>30秒・3つの質問</b>に答えるだけ！<span class="sub">御社に合った採用ルートと、いま紹介できる人材イメージがわかります。</span></p>
     <div class="trust">
@@ -276,7 +277,7 @@
       <span class="intro-badge">◎ 採用ルート診断</span>
       <h2>あなたの会社に合う<br>外国人採用のかたちを診断します</h2>
       <p class="desc">外国人採用には「特定技能」「技人国（技術・人文知識・国際業務）」など複数のルートがあり、業種や求める働き方で最適解が変わります。さらに2026年の制度改正で、企業の<b>カテゴリー区分</b>によって手続きの難易度も変わりました。まずは3問でチェックしましょう。</p>
-      <button class="btn btn-primary btn-full" onclick="start()">診断をはじめる（無料・30秒）</button>
+      <button class="btn btn-primary btn-full" onclick="start()">診断をはじめる（<span class="hl">無料</span>・30秒）</button>
     </div>
 
     <!-- Q1：採用経験（兼松様：人材不足で外国人採用をやったことあるか） -->
@@ -285,7 +286,8 @@
       <p class="q"><span class="qn">Q1.</span>外国人材の採用について、御社の状況に近いものは？</p>
       <div class="opts">
         <button class="opt" onclick="answer('exp','すでに雇用している',2)"><span class="ico">👥</span><span class="lbl">すでに外国人材を雇用している<small>採用ルートの最適化や手続き負担の軽減を考えたい</small></span><span class="chev">›</span></button>
-        <button class="opt" onclick="answer('exp','過去に検討したが見送った',2)"><span class="ico">🤔</span><span class="lbl">過去に検討したが、見送った<small>手続きや制度が難しく、一歩踏み出せなかった</small></span><span class="chev">›</span></button>
+        <button class="opt" onclick="answer('exp','過去に検討したが見送った（制度面）',2)"><span class="ico">🤔</span><span class="lbl">過去に検討したが、見送った（手続き・制度面）<small>手続きや制度が難しく、一歩踏み出せなかった</small></span><span class="chev">›</span></button>
+        <button class="opt" onclick="answer('exp','過去に検討したが見送った（費用面）',2)"><span class="ico">💰</span><span class="lbl">過去に検討したが、見送った（費用面）<small>採用費が高く、見送った</small></span><span class="chev">›</span></button>
         <button class="opt" onclick="answer('exp','はじめて検討している',2)"><span class="ico">🌱</span><span class="lbl">はじめて検討している<small>人手不足で、外国人採用を考えはじめた</small></span><span class="chev">›</span></button>
       </div>
     </div>
@@ -299,7 +301,8 @@
         <button class="opt" onclick="answer('industry','建設',3)"><span class="ico">🏗️</span><span class="lbl">建設</span><span class="chev">›</span></button>
         <button class="opt" onclick="answer('industry','製造',3)"><span class="ico">🏭</span><span class="lbl">製造・工場</span><span class="chev">›</span></button>
         <button class="opt" onclick="answer('industry','農業',3)"><span class="ico">🌾</span><span class="lbl">農業</span><span class="chev">›</span></button>
-        <button class="opt" onclick="answer('industry','外食宿泊',3)"><span class="ico">🍳</span><span class="lbl">外食・宿泊・サービス</span><span class="chev">›</span></button>
+        <button class="opt" onclick="answer('industry','飲食',3)"><span class="ico">🍳</span><span class="lbl">飲食業</span><span class="chev">›</span></button>
+        <button class="opt" onclick="answer('industry','宿泊',3)"><span class="ico">🏨</span><span class="lbl">宿泊業</span><span class="chev">›</span></button>
         <button class="opt" onclick="answer('industry','専門事務',3)"><span class="ico">💼</span><span class="lbl">IT・事務・通訳・貿易など専門職</span><span class="chev">›</span></button>
         <button class="opt" onclick="answer('industry','その他',3)"><span class="ico">🏢</span><span class="lbl">その他</span><span class="chev">›</span></button>
       </div>
@@ -442,9 +445,13 @@
       {ini:"M", name:"モモさん（24）", meta:"ミャンマー出身", tags:["施設園芸 経験","特定技能 農業","繁忙期 即対応可"]},
       {ini:"K", name:"カインさん（26）", meta:"ベトナム出身／来日1年", tags:["露地野菜 収穫経験","日本語 N4","体力◎"]}
     ],
-    "外食宿泊":[
+    "飲食":[
       {ini:"R", name:"ラジさん（25）", meta:"ネパール出身／来日2年", tags:["ホール・調理補助","特定技能 外食","接客 丁寧"]},
-      {ini:"A", name:"アインさん（27）", meta:"ベトナム出身", tags:["ホテル清掃・客室","日本語 N3","土日勤務可"]}
+      {ini:"T", name:"トゥアンさん（26）", meta:"ベトナム出身", tags:["調理・仕込み経験","特定技能 外食","土日勤務可"]}
+    ],
+    "宿泊":[
+      {ini:"A", name:"アインさん（27）", meta:"ベトナム出身", tags:["ホテル清掃・客室","特定技能 宿泊","日本語 N3"]},
+      {ini:"S", name:"スリヤさん（24）", meta:"スリランカ出身", tags:["フロント・接客補助","日本語 N3","笑顔◎"]}
     ],
     "専門事務":[
       {ini:"L", name:"リンさん（30）", meta:"ベトナム出身／大卒（機械工学）", tags:["機械設計 補助","技人国","日本語 N2・英語可"]},
@@ -456,7 +463,7 @@
     ]
   };
   var POOL = {
-    "介護":"約120名","建設":"約90名","製造":"約140名","農業":"約60名","外食宿泊":"約110名","専門事務":"約70名","その他":"多数"
+    "介護":"約120名","建設":"約90名","製造":"約140名","農業":"約60名","飲食":"約90名","宿泊":"約50名","専門事務":"約70名","その他":"多数"
   };
 
   /* ====== 結果（採用ルート）の定義 ======
@@ -543,7 +550,7 @@
   }
 
   function labelIndustry(ind){
-    var m={"介護":"介護・福祉","建設":"建設","製造":"製造・工場","農業":"農業","外食宿泊":"外食・宿泊・サービス","専門事務":"専門職","その他":"各業種の"};
+    var m={"介護":"介護・福祉","建設":"建設","製造":"製造・工場","農業":"農業","飲食":"飲食業","宿泊":"宿泊業","専門事務":"専門職","その他":"各業種の"};
     return m[ind]||"";
   }
 
