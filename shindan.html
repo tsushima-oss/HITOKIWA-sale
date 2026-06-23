@@ -249,6 +249,16 @@
   .about-cta .act .l1{font-weight:800; font-size:14.5px; color:var(--ink); margin:0 0 7px; line-height:1.55;}
   .about-note{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:var(--accent-deep); text-decoration:none; border:1.5px solid var(--accent); border-radius:999px; padding:7px 15px; transition:all .15s ease;}
   .about-note:hover{background:var(--accent); color:#fff;}
+  /* 記事・導入事例ギャラリー（noteの記事カバーを掲載） */
+  .about-cases{margin:0 0 20px;}
+  .cases-label{font-size:13px; font-weight:800; color:var(--ink); margin:0 0 12px; display:flex; align-items:center; gap:8px;}
+  .cases-label::before{content:""; width:4px; height:15px; background:var(--accent); border-radius:2px;}
+  .cases-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;}
+  .case{display:block; text-decoration:none; color:inherit; background:#fff; border:1px solid var(--line); border-radius:13px; overflow:hidden; transition:all .15s ease; box-shadow:0 3px 10px rgba(30,60,30,.06);}
+  .case:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(30,60,30,.14); border-color:var(--accent);}
+  .case img{display:block; width:100%; height:auto; border-bottom:1px solid var(--line2);}
+  .case .case-t{display:block; padding:10px 12px; font-size:11.5px; font-weight:700; line-height:1.55; color:var(--ink);}
+  .cases-note{font-size:11px; color:var(--soft); margin:10px 0 0;}
 
   /* ============ スマホ最適化 ============ */
   @media (max-width:600px){
@@ -308,6 +318,8 @@
     .about-grid{grid-template-columns:1fr; gap:11px;}
     .about-cta{flex-direction:column; text-align:center; gap:10px;}
     .about-cta .ach img{height:72px;}
+    .cases-grid{grid-template-columns:1fr 1fr; gap:9px;}
+    .case .case-t{font-size:11px; padding:8px 10px;}
   }
   @media (max-width:380px){
     .hero h1{font-size:25px;}
@@ -469,11 +481,23 @@
       <div class="ac"><div class="ai">💰</div><p class="at">採用コストの不安にも</p><p>「広告費をかけても採れなかった」企業が採用に成功した事例も多数。紹介料0円での採用事例もあります。</p></div>
       <div class="ac"><div class="ai">🌏</div><p class="at">文化の壁を越えるチーム</p><p>多国籍・多様な経歴のスタッフが、文化の違いに寄り添いながら、企業と人材の橋渡しをします。</p></div>
     </div>
+    <!-- 記事・導入事例ギャラリー（noteの記事カバーを掲載。リンクは個別記事へ） -->
+    <div class="about-cases">
+      <p class="cases-label">ヒトキワの取り組み・導入事例（一部）</p>
+      <div class="cases-grid">
+        <a class="case" href="https://note.com/_hitokiwa/n/n11fdc7b58dbe" target="_blank" rel="noopener"><img src="assets/note/note_daihyo.jpg" alt="代表インタビュー：才能の架け橋を世界に" loading="lazy"><span class="case-t">代表インタビュー｜才能の架け橋を世界に</span></a>
+        <a class="case" href="https://note.com/_hitokiwa/n/n4f3fa0d243b0" target="_blank" rel="noopener"><img src="assets/note/note_kaigo.jpg" alt="介護・医療業界の活用事例" loading="lazy"><span class="case-t">活用事例｜介護・医療業界</span></a>
+        <a class="case" href="https://note.com/_hitokiwa/n/ne36aff0e7bd3" target="_blank" rel="noopener"><img src="assets/note/note_kensetsu.jpg" alt="建設業界の活用事例" loading="lazy"><span class="case-t">活用事例｜建設業界（技術継承）</span></a>
+        <a class="case" href="https://note.com/_hitokiwa/n/nd9392504b9a5" target="_blank" rel="noopener"><img src="assets/note/note_yogashi.jpg" alt="洋菓子メーカーの活用事例" loading="lazy"><span class="case-t">活用事例｜洋菓子メーカー</span></a>
+        <a class="case" href="https://note.com/_hitokiwa/n/n171047691842" target="_blank" rel="noopener"><img src="assets/note/note_chuka.jpg" alt="横浜の中華料理店の活用事例（紹介料0円）" loading="lazy"><span class="case-t">活用事例｜中華料理店（紹介料0円）</span></a>
+        <a class="case" href="https://note.com/_hitokiwa/n/n320feed34548" target="_blank" rel="noopener"><img src="assets/note/note_zoen.jpg" alt="造園業の活用事例" loading="lazy"><span class="case-t">活用事例｜造園業</span></a>
+      </div>
+      <p class="cases-note">※ 画像はヒトキワ公式note（自社メディア）の記事です。ほかにも多数の事例があります。</p>
+    </div>
     <div class="about-cta">
       <div class="ach"><img src="assets/chars/megane_happy.png?v=4" alt=""></div>
       <div class="act">
-        <p class="l1">「まずは話を聞いてみたい」「うちでもできる？」——その段階で大丈夫です。</p>
-        <a class="about-note" href="https://note.com/_hitokiwa" target="_blank" rel="noopener">▶ 働くスタッフ・導入事例を見る（note）</a>
+        <p class="l1" style="margin-bottom:0;">「まずは話を聞いてみたい」「うちでもできる？」——その段階で大丈夫です。お気軽にご相談ください。</p>
       </div>
     </div>
   </section>
