@@ -230,6 +230,26 @@
   .foot-chars{display:flex; align-items:flex-end; justify-content:center; gap:10px; margin:6px 0 14px;}
   .foot-chars img{height:78px; width:auto; filter:drop-shadow(0 5px 9px rgba(30,50,25,.16));}
 
+  /* ====== ヒトキワについて（安心・相談したくなる）====== */
+  .about{margin-top:34px; background:linear-gradient(180deg,#ffffff,#eef5ea); border:1px solid var(--line); border-radius:20px; padding:32px 28px 30px; position:relative; overflow:hidden; box-shadow:0 14px 38px rgba(30,60,30,.08);}
+  .about::before{content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--indigo));}
+  .about-kick{display:inline-block; font-size:11px; font-weight:800; letter-spacing:.16em; color:var(--accent); background:var(--vermilion-soft); padding:5px 13px; border-radius:999px; margin-bottom:12px;}
+  .about-h{font-family:var(--serif); font-weight:800; font-size:24px; line-height:1.5; letter-spacing:.02em; margin:0 0 10px;}
+  .about-mission{font-size:14.5px; color:var(--muted); line-height:1.85; margin:0 0 22px;}
+  .about-mission b{color:var(--accent-deep);}
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:13px; margin:0 0 20px;}
+  .ac{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 17px;}
+  .ac .ai{font-size:22px; line-height:1; margin-bottom:9px;}
+  .ac .at{font-weight:800; font-size:14.5px; color:var(--ink); margin:0 0 5px; line-height:1.5;}
+  .ac p{font-size:12.5px; color:var(--muted); line-height:1.7; margin:0;}
+  .about-cta{display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px;}
+  .about-cta .ach{flex:0 0 auto;}
+  .about-cta .ach img{height:64px; width:auto; filter:drop-shadow(0 5px 9px rgba(30,50,25,.16));}
+  .about-cta .act{flex:1;}
+  .about-cta .act .l1{font-weight:800; font-size:14.5px; color:var(--ink); margin:0 0 7px; line-height:1.55;}
+  .about-note{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:var(--accent-deep); text-decoration:none; border:1.5px solid var(--accent); border-radius:999px; padding:7px 15px; transition:all .15s ease;}
+  .about-note:hover{background:var(--accent); color:#fff;}
+
   /* ============ スマホ最適化 ============ */
   @media (max-width:600px){
     body{font-size:15.5px; line-height:1.88; letter-spacing:.02em;}
@@ -283,6 +303,11 @@
     .celebrate img{height:76px;}
     .foot-chars img{height:60px;}
     .sectit .sch{height:36px;}
+    .about{padding:24px 16px 24px;}
+    .about-h{font-size:20px;}
+    .about-grid{grid-template-columns:1fr; gap:11px;}
+    .about-cta{flex-direction:column; text-align:center; gap:10px;}
+    .about-cta .ach img{height:72px;}
   }
   @media (max-width:380px){
     .hero h1{font-size:25px;}
@@ -432,6 +457,26 @@
       本診断は、業種・採用目的に応じた在留資格（採用ルート）の目安をご案内する簡易診断です。「特定技能」「技術・人文知識・国際業務（技人国）」の要件、企業カテゴリー区分・必要書類は、出入国在留管理庁の最新基準にてご確認ください。最終的な可否は個別審査によります。
     </p>
   </div>
+
+  <!-- ヒトキワについて（安心感づくり・相談動機）。note(https://note.com/_hitokiwa) の事実を基に作成 -->
+  <section class="about">
+    <span class="about-kick">ABOUT ｜ ヒトキワについて</span>
+    <h2 class="about-h">外国人採用を、<br>はじめから、その先まで。</h2>
+    <p class="about-mission">私たちのミッションは「<b>才能の架け橋を世界に</b>」。<br>日本の人手不足と、世界で活躍したい人の機会を結び、「<b>採用してよかった</b>」と思える出会いを増やします。</p>
+    <div class="about-grid">
+      <div class="ac"><div class="ai">🤝</div><p class="at">紹介して終わり、ではない</p><p>来日する方への日本語・ビジネスマナー教育から、採用後の定着フォローまで一緒に伴走します。</p></div>
+      <div class="ac"><div class="ai">🏭</div><p class="at">業種を問わない導入実績</p><p>介護・建設・製造・飲食・食品・造園など、幅広い現場での外国人採用を支援してきました。</p></div>
+      <div class="ac"><div class="ai">💰</div><p class="at">採用コストの不安にも</p><p>「広告費をかけても採れなかった」企業が採用に成功した事例も多数。紹介料0円での採用事例もあります。</p></div>
+      <div class="ac"><div class="ai">🌏</div><p class="at">文化の壁を越えるチーム</p><p>多国籍・多様な経歴のスタッフが、文化の違いに寄り添いながら、企業と人材の橋渡しをします。</p></div>
+    </div>
+    <div class="about-cta">
+      <div class="ach"><img src="assets/chars/megane_happy.png?v=4" alt=""></div>
+      <div class="act">
+        <p class="l1">「まずは話を聞いてみたい」「うちでもできる？」——その段階で大丈夫です。</p>
+        <a class="about-note" href="https://note.com/_hitokiwa" target="_blank" rel="noopener">▶ 働くスタッフ・導入事例を見る（note）</a>
+      </div>
+    </div>
+  </section>
 
   <div class="footer">
     <div class="foot-chars">
